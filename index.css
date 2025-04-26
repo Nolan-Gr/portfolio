@@ -7,11 +7,64 @@
   
   body {
     font-family: 'PT Sans', sans-serif;
-    background-color: #000000;
+    background: linear-gradient(135deg, #2f2f2f, #1d1d1d, #000000);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     color: white;
     line-height: 1.6;
     padding-top: 60px;
     font-size: large ;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .background-deco {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.027);
+    animation: move 8s alternate-reverse infinite;
+    pointer-events: none;
+  }
+  
+  .circle:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 20%;
+  }
+  
+  .circle:nth-child(2) {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 70%;
+  }
+  
+  .circle:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 80%;
+    left: 30%;
+  }
+  
+  @keyframes move {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 50px) scale(1.2); }
   }
   
   nav {
@@ -84,7 +137,7 @@
     border-radius: 5%;
   }
   
-  .caca {
+  .logo {
     width: 100%;
     transition: filter 0.3s ease;
     display: block;
@@ -108,6 +161,8 @@
   
   .image-container:hover img {
     filter: brightness(0.5);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, filter 0.3s ease;
   }
   
   .image-container:hover .image-text {
@@ -115,11 +170,17 @@
   }
   
   .content-panel {
-    background: #158e6e;
+    background: #12765b;
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(47, 0, 255, 0.757);
+  }
+
+  .content-panel:hover {
+    transform: translateY(-5px);
   }
   
   .content-panel h2 {
