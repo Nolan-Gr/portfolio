@@ -37,7 +37,7 @@
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.027);
-    animation: move 8s alternate-reverse infinite;
+    animation: move 8s alternate infinite;
     pointer-events: none;
   }
   
@@ -216,4 +216,16 @@
     color: white;
     margin-top: 3rem;
   }
-  
+
+  .Footer-content a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .Footer-content a:hover {
+      color: #1DCD9F;
+  }
+    
